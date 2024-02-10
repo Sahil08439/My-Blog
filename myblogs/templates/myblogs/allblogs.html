@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL BLOGS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="bg-dark">
+    {% include 'myblogs/navbar.html' %}
+    <div class="container text-center mb-4">
+        <style>
+    .card-custom {
+        height: 100%; /* This ensures that all cards have the same height based on their parent container */
+        background: linear-gradient(45deg, #e6f7ff, #c3e6f5);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-img-top {
+        width: 100%; /* Makes image width responsive to the container's width */
+        height: 200px; /* Fixes image height */
+        object-fit: cover; /* Ensures the image covers the area, might crop it */
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Adjusts inner content to be spaced evenly */
+    }
+</style>
+
+<h3 class="display-3 text-info text-warning">{{z}} BLOGS</h3>
+<p class="display-3 text-info text-warning">{{errmessage}}</p>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for blog in y %}
+        <div class="col">
+            <div class="card card-custom">
+                <img src="{{ blog.cover_img.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #003366; font-weight: bold; text-transform: uppercase;">{{ blog.blog_name }}</h5>
+                    <a href="{% url 'blog_details' blog.id %}" class="btn btn-primary" style="background-color: #0066cc; border: none">Read more</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+        
+    </div>
+
+
+    <div style="text-align: center;" class="text-white">
+        {% if y.has_previous %} {# whether the previous page exists #}
+        <a href="?page={{ y.previous_page_number }}">>></a> {# link to the prev page #}
+        {% endif %}
+        <span>{{ y.number }}</span> {# the current page number #}
+        {% if y.has_next %} {# whether the next page exists #}
+        <a href="?page={{ y.next_page_number }}">>></a> {# link to the next page #}
+        {% endif %}
+        
+      </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ <!-- footer starts here  -->
+{% include "myblogs/footer.html" %}
+<!-- footer ends here  -->
+
+</body>
+</html>
