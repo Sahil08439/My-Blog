@@ -46,36 +46,39 @@
 
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" class="active"
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" class="active"
-        aria-current="true" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" class="active"
-        aria-current="true" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
     </div>
-
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="2000">
-        <img
-          src="https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_1280.jpg"
+        <img src="https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_1280.jpg"
           class="d-block w-100" alt="..." style="object-fit: cover; height: 500px;">
-        <div class="carousel-caption mb-3">
-          <h5>" 虎穴に入らずんば虎子を得ず " (If you do not enter the tiger's cave, you will not catch its cub)</h5>
+        <div class="carousel-caption mb-2">
+          <h5>CONSISTENCY</h5>
+          <p style="color: aqua;">" 水滴石穿，绳锯木断 " (𝓓𝓻𝓲𝓹𝓹𝓲𝓷𝓰 𝓦𝓪𝓽𝓮𝓻 𝓦𝓮𝓪𝓻𝓼 𝓐𝔀𝓪𝔂 𝓐 𝓢𝓽𝓸𝓷𝓮 𝓑𝓾𝓽 𝓒𝓸𝓷𝓼𝓽𝓪𝓷𝓽
+            𝓓𝓻𝓸𝓹𝓹𝓲𝓷𝓰 𝓦𝓮𝓪𝓻𝓼 𝓐𝔀𝓪𝔂 𝓣𝓱𝓮 𝓡𝓮𝓼𝓲𝓼𝓽𝓪𝓷𝓬𝓮)</p>
         </div>
       </div>
-      <div class="carousel-item active" data-bs-interval="2000">
+      <div class="carousel-item" data-bs-interval="2000">
         <img
           src="https://images.unsplash.com/photo-1632441730372-d8509de481d1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           class="d-block w-100" alt="..." style="object-fit: cover; height: 500px;">
-        <div class="carousel-caption mb-3">
-          <h5>" Unleash the power of luxury and speed "</h5>
+        <div class="carousel-caption mb-2">
+          <h5>LUXURY</h5>
+          <p style="color: gold;">" 𝓤𝓷𝓵𝓮𝓪𝓼𝓱 𝓣𝓱𝓮 𝓟𝓸𝔀𝓮𝓻 𝓕𝓯 𝓵𝓾𝔁𝓾𝓻𝔂 𝓐𝓷𝓭 𝓢𝓹𝓮𝓮𝓭 "</p>
         </div>
       </div>
-      <div class="carousel-item active" data-bs-interval="2000">
-        <img src="https://images.unsplash.com/photo-1506045412240-22980140a405?q=80&w=1550&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D "
+      <div class="carousel-item" data-bs-interval="2000">
+        <img
+          src="https://images.unsplash.com/photo-1479520997871-76c75ea2b67a?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           class="d-block w-100" alt="..." style="object-fit: cover; height: 500px;">
-        <div class="carousel-caption mb-3">
-          <h5>" Beauty begins the moment you decide to be yourself "</h5>
+        <div class="carousel-caption mb-2">
+          <h5>LIGHTS</h5>
+          <p style="color: rgb(30, 255, 30);">" 𝓛𝓮𝓽 𝓣𝓱𝓮 𝓒𝓲𝓽𝔂 𝓛𝓲𝓰𝓱𝓽𝓼 𝓖𝓾𝓲𝓭𝓮 𝓨𝓸𝓾 𝓗𝓸𝓶𝓮 "</p>
         </div>
       </div>
     </div>
@@ -99,13 +102,12 @@
       <h3 class="display-4 text-warning fw-bold mt-4 mb-5">WELCOME TO MY BLOG !</h3>
       {% if category %}
       <div class="row">
-
+  
         {% for y in category %}
         <div class="col">
           <div class="card mt-2 bg-secondary hex">
             <!-- Apply border-radius in the style attribute -->
             <img src="{{ y.blogcat_img.url }}" style="height: 200px;" alt="">
-
 
             <div class="card-body mt-2">
               <h5 class="card-title">{{ y.blog_cat }}</h5>
@@ -156,6 +158,8 @@
       border-radius: 50px;
       border-color: aqua !important;
       transition: all 0.3s ease 0s;
+      transform: scale(0.95);
+      box-shadow: 0 0 12px aquamarine;
     }
   </style>
   <!-- Footer section starts here  -->
