@@ -10,13 +10,21 @@
 <body class="bg-dark">
     {% include 'myblogs/navbar.html' %}
     <div class="container text-center mb-4">
-        <style>
+    <style>
+    .card:hover{
+      border-color: aqua;
+      transition: all 0.3s ease 0s;
+      transform: scale(0.95);
+      box-shadow: 0 0 12px aquamarine;
+    }
+
     .card-custom {
         height: 100%; /* This ensures that all cards have the same height based on their parent container */
         background: linear-gradient(45deg, #e6f7ff, #c3e6f5);
-        border-radius: 15px;
+        border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        
     }
 
     .card-img-top {
@@ -26,6 +34,7 @@
     }
 
     .card-body {
+        border: 4px aqua;
         display: flex;
         flex-direction: column;
         justify-content: space-between; /* Adjusts inner content to be spaced evenly */
@@ -39,9 +48,10 @@
     {% for blog in y %}
         <div class="col">
             <div class="card card-custom">
+                
                 <img src="{{ blog.cover_img.url }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title" style="color: #003366; font-weight: bold; text-transform: uppercase;">{{ blog.blog_name }}</h5>
+                    <h5 class="card-title">{{ blog.blog_name }}</h5>
                     <a href="{% url 'blog_details' blog.id %}" class="btn btn-primary" style="background-color: #0066cc; border: none">Read more</a>
                 </div>
             </div>
